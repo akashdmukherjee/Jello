@@ -1,0 +1,72 @@
+.cards-container { /*FLEX CONTAINER*/
+  display: flex;
+  height: 600px;
+  background-color: DodgerBlue;
+
+  flex-direction: row; /*row, column, row-reverse, column-reverse*/
+  flex-wrap: wrap; /*wrap, nowrap*/
+  justify-content: center; /*flex-start, center, flex-end, space-around, space-between*/
+  align-items: center;  /*flex-start, center, flex-end, stretch, baseline*/
+  align-content: space-between; /*flex-start, center, flex-end, space-around, space-between*/
+
+/*
+PERFECT CENTERING
+  justify-content: center;
+  align-items: center;
+*/  
+}
+
+.cards-container > div { /*FLEX CONTAINER CHILDREN*/
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.regulartext {
+    color: #595c7c;
+    font-size: 1.75rem;
+    line-height: 2rem;
+    vertical-align: baseline;
+}
+
+.landingpage-main {
+    height: 500px;
+    margin-top: 10%;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.span-problmspace {
+    color: #74a2d6;
+    font-weight: 600;
+}
+
+.landingpage-main-section2 {
+    margin-top: 10%;
+}
+
+.landingpage-bullets {
+    color: #8186b5;
+    font-size: 0.8em;
+    margin-top: 5%;
+}
+
+.landingpage-image {
+    width: 66%;
+    height: 50%;
+}
+
+.landingpage-subscribebutton {
+    margin-left: 25%;
+    width: 25%;
+    height: 30%;
+    border: none;
+    margin-top: 5%;
+}
+
+.leftspace {
+    margin-left: 10px;
+}
