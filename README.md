@@ -12,11 +12,9 @@ An open-source boilerplate using Python and other web technologies that you can 
 
 ## Postgres Database, Connectors & CRUD
 
-* Design Database
-* SQLAlchemy Connectors
-* Functions to execute custom SQL queries - read & write to the DB
+* Relational Database Schema for Content Curation & Social Networking Web App
+* Database connectors and reusable functions to execute custom SQL queries - read & write to the DB
 * Let users create, edit and delete content
-* Let users edit content
 
 ## User Management System
 
