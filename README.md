@@ -1,4 +1,7 @@
+![N|Solid](https://media.giphy.com/media/WOrc2uHShz9eXkuBoo/giphy.gif)
 # Jello: Python Web Boilerplate
+
+An open-source boilerplate using Python and other web technologies that you can clone to spin off web tools really fast and then configure them easily per your need.
 
 ## Web Backend on Flask
 
@@ -7,17 +10,31 @@
 * Python modules filter, aggregate and reshape data in backend
 * Real-time reactivity: auto-refresh content in UI on updates to the backend data models by other users (such as in case of comments)
 
-## Database & SQLAlchemy Connectors
+## Postgres Database, Connectors & CRUD
 
 * Design Database
 * SQLAlchemy Connectors
 * Functions to execute custom SQL queries - read & write to the DB
+* Let users create, edit and delete content
+* Let users edit content
 
 ## User Management System
 
 * Social Logins such as Google. Facebook, LinkedIn sign-in
 * Custom user registration, login, logout
 * Session management
+
+## Database Polling & Messaging using WebSockets
+
+* Setup websockets
+* Implement for polling the SQL database for changes & push updates to UI
+* Implement for messaging system
+
+## Caching & DeepDiff using Redis
+
+* Cache denormalized data for posts and related items (likes, comments etc.)
+* Store & update diff in each user's activity stream
+* Retrieve each user's activity stream
 
 ## Free text search using Solr
 
@@ -39,12 +56,6 @@
 * Read & write to Google Spreadsheet
 * Read/scrape text from PDF files
 
-CRUD - Content Management
-
-* Let users create content
-* Let users edit content
-* Let owners delete content
-
 ## Machine Learning
 
 * Risk Based Triaging: High / Medium / Low
@@ -53,11 +64,12 @@ CRUD - Content Management
 * Anomaly Detection: outliers, suspicious transaction activity
 * Natural Language Processing - fuzzy name matching, classifying as people/entities, sentiment analysis
 
-UI Design using Bootstrap
+## UI Design
 
 * Landing Page
 * Login & Registration
 * Home Page with feed of cards
+* Device Size Responsive using CSS Flexgrid
 * Card page
 * Ability to upvote
 * Ability to comment
@@ -67,17 +79,19 @@ UI Design using Bootstrap
 * Page Navigation
 * Collection of Cards
 * Tags - create, edit, delete, add to post
+* Notifications
+* Messaging
 * Admin Panel to customize styling elements
-* Page Loader Animation
+* Page Loader Animation on screen and on each post
 
-Front End Javascript
+## Front End Javascript
 
 * JavaScript functions to create, update, modify, stylize HTML divs
 * JavaScript functions to reshape data
 * AJAX to make REST API calls to fetch JSON data
 * Event Handlers to handle clicks, user events
 
-Data Visualization
+## Data Visualization
 
 * Bar Charts
 * Nice Table with Pagination, Heatmap Abilities
@@ -86,12 +100,19 @@ Data Visualization
 * Donut Charts
 * Filters & User inputs
 * Drill down
+* Icons
 
-Deploy on cloud (AWS)
+## Config JSON
+
+* Configure website styling
+* Configure database entities
+* Configure RPA activities
+
+## Deploy on cloud (AWS)
 
 * Setup security levels
 * Setup users & groups for programmatic access
 * Create RDS database
 * Deploy Python website using Elastic Beanstalk
 
-formatted using: https://dillinger.io/
+Formatted using: [https://dillinger.io/](https://www.google.com/url?q=https://dillinger.io/&sa=D&ust=1556464220543000)
