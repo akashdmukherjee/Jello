@@ -1,24 +1,40 @@
 import psycopg2
-from sqlalchemy import create_engine
 import csv
 import json
 
-db_string = "postgres://omemqnfx:8VSwANQ4OPI-pMDU5zGKbgOe4MtHZ369@elmer.db.elephantsql.com:5432/omemqnfx"
-db = create_engine(db_string)
+try:
+    conn = psycopg2.connect("dbname='omemqnfx' user='omemqnfx' host='elmer.db.elephantsql.com' password='8VSwANQ4OPI-pMDU5zGKbgOe4MtHZ369'")
+except:
+    print ("I am unable to connect to the database")
+
+cur = conn.cursor()
 
 
-def getData():
-    print ("=================Entered getData=================")
+def getItems():
+    print ("=================Entered getItems=================")
     #print (request)
     #param = request.values.get("param")
     
     # Read
-    result_set = db.execute("SELECT * FROM webapp.items")  
-    for r in result_set:  
-      print(r)
+    sql_query = """ 
+                    SELECT * 
+                    FROM webapp.items 
+                """
+    
+    cur.execute(sql_query)
+    rows = cur.fetchall()
+  
+    data = []
+
+    for row in rows:
+      obj = {}
+      obj["item_id"] = row[0]
+      obj["item_name"] = row[1]
+      obj["item_image"] = row[2]
+      data.append(obj)
 
     #data_json = {"datakey": data}
-    #data_json = json.dumps(data_json)
-    #print (data_json)
-    #return data_json
-    return 1
+    data_json = json.dumps(data)
+    print(type(data_json))
+    print (data_json)
+    return data_json

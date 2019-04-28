@@ -8,6 +8,7 @@ import datetime
 import time
 import urllib
 import backend.apis
+import backend.utils
 
 
 app = Flask(__name__)
@@ -16,20 +17,19 @@ app = Flask(__name__)
 @app.route("/home")
 @app.route("/")
 def home():
-    my_list = range(101, 207)
-    backend.apis.getData()
+    #my_list = range(101, 207)
+    webapp_config = backend.utils.textfile_to_var("config/webapp.config.json", "json")
 
-    webapp_config_txt = ""
-    with open('config/webapp.config.json', 'r') as file:
-        webapp_config_txt = file.read()
+    return render_template(
+                              "home.html"
+                            , my_string="akash"
+                            , items=backend.apis.getItems()
+                            , background_color=("background-color: " + str(webapp_config['website_background'])) 
+    )
 
-    webapp_config = json.loads(webapp_config_txt)
-
-    return render_template("home.html", my_string="akash", my_list=my_list, background_color=("background-color: " + str(webapp_config['website_background'])) )
-
-@app.route("/api/getData", methods=['POST'])
-def api_getData():
-    getData()
+@app.route("/api/getItems", methods=['POST'])
+def api_getItems():
+    backend.apis.getItems()
 
 #def getUser_fromDB():
 #    cur = db_conn.cursor()

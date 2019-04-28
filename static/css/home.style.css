@@ -4,17 +4,18 @@ body {
   font-size: 0.8rem;
   color: #3F3F3F;
   text-decoration: none;
+  background-color: #FBFBFB;
 }
 
-.sidenav-logo {
-    margin-top: 5%;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 10%;
-}
-
-.sidenav-options {
-    margin: 10%;
+.sidenav {
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #F5F5F5;
+  color: #989eb3;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
 }
 
 .cards-container { /*FLEX CONTAINER*/
@@ -23,7 +24,7 @@ body {
 
   flex-direction: row; /*row, column, row-reverse, column-reverse*/
   flex-wrap: wrap; /*wrap, nowrap*/
-  justify-content: center; /*flex-start, center, flex-end, space-around, space-between*/
+  justify-content: flex-start; /*flex-start, center, flex-end, space-around, space-between*/
   align-items: center;  /*flex-start, center, flex-end, stretch, baseline*/
   align-content: space-between; /*flex-start, center, flex-end, space-around, space-between*/
 
@@ -35,7 +36,6 @@ PERFECT CENTERING
 }
 
 .card { /*FLEX CONTAINER CHILDREN*/
-  background-color: #fff;
   border: 1px solid #EFEFEF;
   border-radius: 8px;
 
@@ -59,14 +59,14 @@ PERFECT CENTERING
     text-decoration: none;
     text-transform: uppercase;
     text-align: left;
-    border-top: 1px EFEFEF solid;
+    border-top: 1px #EFEFEF solid;
 }
 
-.card-image {
+img {
     max-width:100%;
     max-height:100%;
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
 }
 
 
@@ -78,15 +78,8 @@ PERFECT CENTERING
     vertical-align: baseline;
 }
 
-.sidenav {
-  margin: 0;
-  padding: 0;
-  width: 15%;
-  background-color: #222736;
-  color: #989eb3;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
+.sidenav-options {
+    margin: 10%;
 }
 
 .sidenav a {
@@ -98,11 +91,12 @@ PERFECT CENTERING
 }
  
 .sidenav a.active {
-  color: white;
+  background-color: #DDDDDD;
+  color: black;
 }
 
 .sidenav a:hover:not(.active) {
-  color: #FEFEFE;
+  color: #3C3C3C;
 }
 
 .main {
@@ -111,9 +105,12 @@ PERFECT CENTERING
 }
 
 .topnav {
-	width: 100%;
-    height: 70px;
-    background-color: #f1f1f1;
+	  width: 100%;
+    height: 66px;
+    background-color: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.05);
     
     display: flex;
     flex-direction: row;
@@ -143,29 +140,45 @@ PERFECT CENTERING
   }
 }
 
-
-.searchbar {
+.topnav-sitelogo {
     border: 1px green solid;
     margin-left: 2%;
-    width: 60%;
+    width: 8%;
     height: 80%;
 }
 
-.searchbutton {
+.topnav-sitename {
+  border: 1px green solid;
+  margin-left: 2%;
+  width: 8%;
+  height: 80%;
+
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.topnav-searchbar {
+    border: 1px green solid;
+    margin-left: 2%;
+    width: 40%;
+    height: 80%;
+}
+
+.topnav-searchbutton {
     border: 1px green solid;
     margin-left: 2%;
     width: 20%;
     height: 80%;
 }
 
-.notificationicon {
+.topnav-notificationicon {
     border: 1px green solid;
     margin-left: 2%;
     width: 5%;
     height: 80%;
 }
 
-.accounticon {
+.topnav-accounticon {
     border: 1px green solid;
     margin-left: 2%;
     width: 5%;

@@ -22,10 +22,29 @@
 <head>
 
 <body>
-    <div class="sidenav">
-        <div class="sidenav-logo">
-            <i class="fas fa-th-large"> Jello </i>
+    <div class="topnav"> 
+        <div class="topnav-sitelogo">
+            <img src="static/images/monotelogo.png" alt="Jello">
+        </div>
+        <div class="topnav-sitename">
+            Jello
+        </div>        
+        <div class="topnav-searchbar">
+            <i class="fa fa-user icon"></i>
+            <input class="userinput-textbox" type="text" placeholder="Search for items" name="search">
         </div> 
+        <div class="topnav-searchbutton">
+            <button type="submit" class="button">Register</button>
+        </div>
+        <div class="topnav-notificationicon">
+            <i class="fa fa-user icon"></i>
+        </div>
+        <div class="topnav-accounticon">
+            <i class="fa fa-user icon"></i>
+        </div>                               
+    </div>    
+    
+    <div class="sidenav">
         <div class="sidenav-options">
             <a class="active" href="#">Option 1</a>
             <a href="#">Option 2</a>
@@ -37,39 +56,33 @@
     </div>
 
     <div class="main">
-        <div class="topnav"> 
-            <div class="searchbar">
-                <i class="fa fa-user icon"></i>
-                <input class="userinput-textbox" type="text" placeholder="Search for items" name="search">
-            </div> 
-            <div class="searchbutton">
-                <button type="submit" class="button">Register</button>
-            </div>
-            <div class="notificationicon">
-                <i class="fa fa-user icon"></i>
-            </div>
-            <div class="accounticon">
-                <i class="fa fa-user icon"></i>
-            </div>                               
-        </div>
-
-
         <div class="content">
             <p>Screen will resize when it's reduced beyond 700px.</p>
             <p>
                 Some Header Material Here
             </p>            
             <div class="cards-container">
-                {% for n in my_list %}
+
+
                 <div class="card">
                     <div class="card-section-top">
-                        <img class="card-image" src="static/images/card-1.png">
+                        <img class="card-image" src="static/images/cards/card-1.jpg" alt="Image Not Found">
                     </div>
                     <div class="card-section-bottom">
-                        Card {{n}}
+                        Card 1
                     </div>
                 </div>
-                {% endfor %}                        
+                <div class="card">
+                    <div class="card-section-top">
+                        <img class="card-image" src="static/images/cards/card-2.jpg" alt="Image Not Found">
+                    </div>
+                    <div class="card-section-bottom">
+                        Card 2
+                    </div>
+                </div>
+
+
+
             </div>             
         </div> 
 
