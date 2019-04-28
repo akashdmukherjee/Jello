@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  font-family: 'monosten-e', sans-serif;
+  font-size: 0.8rem;
+  color: #3F3F3F;
+  text-decoration: none;
+}
+
+.sidebar-logo {
+    margin-top: 5%;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.sidebar-options {
+    margin: 10%;
+}
+
+.cards-container { /*FLEX CONTAINER*/
+  display: flex;
+  /*height: 600px;*/
+
+  flex-direction: row; /*row, column, row-reverse, column-reverse*/
+  flex-wrap: wrap; /*wrap, nowrap*/
+  justify-content: center; /*flex-start, center, flex-end, space-around, space-between*/
+  align-items: center;  /*flex-start, center, flex-end, stretch, baseline*/
+  align-content: space-between; /*flex-start, center, flex-end, space-around, space-between*/
+
+/*
+PERFECT CENTERING
+  justify-content: center;
+  align-items: center;
+*/  
+}
+
+.card { /*FLEX CONTAINER CHILDREN*/
+  background-color: #fff;
+  border: 1px solid #EFEFEF;
+  border-radius: 8px;
+
+  width: 250px;
+  height: 300px;
+
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 1.5em;
+}
+
+.card-section-top {
+    height: 80%;
+}
+
+.card-section-bottom {
+    height: 20%;
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: left;
+    border-top: 1px EFEFEF solid;
+}
+
+.card-image {
+    max-width:100%;
+    max-height:100%;
+    width: 100%;
+    height: auto;
+}
+
+
+
+.regulartext {
+    color: #595c7c;
+    font-size: 1.75rem;
+    line-height: 2rem;
+    vertical-align: baseline;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #222736;
+  color: #989eb3;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: #989eb3;
+  padding-top: 10px;
+  padding-left: 10px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  color: #FEFEFE;
+}
+
+.main {
+  margin-left: 15%;
+  padding: 0px;
+}
+
+.search {
+	width: 100%;
+    height: 70px;
+    background-color: #f1f1f1;
+}
+
+.content {
+    margin-left: 2%;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+
+
+
+
+
+
+
+

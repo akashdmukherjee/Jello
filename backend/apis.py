@@ -20,4 +20,5 @@ def getData():
     #data_json = {"datakey": data}
     #data_json = json.dumps(data_json)
     #print (data_json)
-    return data_json
+    #return data_json
+    return 1

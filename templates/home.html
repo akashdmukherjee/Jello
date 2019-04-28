@@ -15,42 +15,53 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
         <!-- CUSTOM -->
-        <link href="static/css/style.css" rel="stylesheet" type="text/css">
+        <link href="static/css/home.style.css" rel="stylesheet" type="text/css">
         <script src="static/js/functions.js" type="text/javascript"></script>
         <script src="static/js/event_handlers.js" type="text/javascript"></script>
         
 <head>
 
 <body>
-    <div class="landingpage-main" style= {{background_color}}  >
-        <div class="landingpage-main-section1">
-            <img class="landingpage-image" src="static/images/product.gif">
-            <button type="button" class="btn-success btn-lg landingpage-subscribebutton">Subscribe</button>
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <i class="fas fa-th-large"> Jello </i>
+        </div> 
+        <div class="sidebar-options">
+            <a class="active" href="#">Option 1</a>
+            <a href="#">Option 2</a>
+            <a href="#">Option 3</a>
+            <a href="#">Option 4</a>
         </div>
-        <div class="landingpage-main-section2">
-            <div class="regulartext">
-                       <span class="span-problmspace">Jello </span> is an open-source boilerplate that you can clone to spin off python <i>web tools</i> really fast and then configure them easily per your need.       
-            </div>
-            <div class="landingpage-bullets">
-                    <div class="row">
-                        <i class="fas fa-arrow-right"> </i> <span class="leftspace"> DATABASES, CONNECTORS, AND CRUD INTERFACE </span>
-                    </div>
-                    <div class="row">
-                        <i class="fas fa-arrow-right"> </i> <span class="leftspace"> USER MANAGEMENT, SEARCH AND REAL TIME REACTIVITY </span>
-                    </div>
-                    <div class="row">
-                        <i class="fas fa-arrow-right"> </i> <span class="leftspace"> ROBOTIC AUTOMATION AND SCRAPING ON WEBSITES AND FLAT FILE</span>
-                    </div>                           
-            </div>
-        </div>
-
-
-        <div class="cards-container">
-            {% for n in my_list %}
-            <div>{{n}}</div>
-            {% endfor %}                        
-        </div>
+        
 
     </div>
+
+    <div class="main">
+        <div class="search"> 
+            searchbar 
+        </div>
+
+
+        <div class="content">
+            <p>Screen will resize when it's reduced beyond 700px.</p>
+            <p>
+                Some Header Material Here
+            </p>            
+            <div class="cards-container">
+                {% for n in my_list %}
+                <div class="card">
+                    <div class="card-section-top">
+                        <img class="card-image" src="static/images/card-1.png">
+                    </div>
+                    <div class="card-section-bottom">
+                        Card {{n}}
+                    </div>
+                </div>
+                {% endfor %}                        
+            </div>             
+        </div> 
+
+    </div>
+
 </body>
 </html>
