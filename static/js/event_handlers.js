@@ -1,20 +1,15 @@
 $( document ).ready(function() {
-            var input = "Akash";
-            $.ajax(
-                        {
-                                url: "/getData"
-                            , type: 'POST'
-                            , async: false
-                            , data: {param: input}
-                            , success: function(response) {
-                                                    response = JSON.parse(response);
-                                                    console.log(response.datakey);
-                                    }
+    getPosts_fromServer("");
+    
 
-                        }
-            );
 
-            if(checkIfMobile()) {
-                $(".landingpage-bullets").hide();
-            }
+    $( ".topnav-searchbutton" ).click(function() {
+        var user_search_string = $( ".topnav-searchbar" ).val();
+        console.log("----");
+        console.log(user_search_string);
+        console.log("----");
+        getPosts_fromServer(user_search_string);
+    });
+      
 });
+

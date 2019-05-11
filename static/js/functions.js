@@ -10,3 +10,49 @@ var checkIfMobile = function() {
     return isMobile;
 
 };
+
+var createCardsHTML = function(posts) {
+    $( ".cards-container" ).html("");
+    for (var i = 0; i < posts.length; i++) { 
+        var post = posts[i];
+        console.log(post);
+        var card_html = `
+                        <div class='card'>
+                            <div class='card-section-top'>
+                                <img class='card-image' src='static/images/cards/`+post["post_image"]+`'>
+                            </div>`
+                            +
+                            `<div class='card-section-bottom'>` +
+                                `<div class='card-section-bottom-left'>` +
+                                    `<div class='card-section-bottom-title'>` + post["post_name"] + `</div>` +
+                                    `<div class='card-section-bottom-tags'>` + 
+                                         `<span class='card-section-bottom-tag'>` + post["post_tags"][0] + `</span>` + 
+                                            `, ` +
+                                        `<span class='card-section-bottom-tag'>` + post["post_tags"][1] + `</span>` +  
+                                    `</div>` +
+                                `</div>` +
+                                `<div class='card-section-bottom-right-icon'> <i class='far fa-thumbs-up fa-lg'></i> </div>` +
+                                `<div class='card-section-bottom-right-icon'> <i class='far fa-bookmark fa-lg'></i> </div>` +
+                            `</div>
+                        </div>
+                        `;        
+        $( ".cards-container" ).append( card_html );
+    } 
+};
+
+var getPosts_fromServer = function(user_search_string) {
+    $.ajax(
+                {
+                      url: "/api/getPosts"
+                    , type: 'GET'
+                    , async: false
+                    , data: {param: user_search_string}
+                    , success: function(response) {
+                                            posts = JSON.parse(response);
+                                            console.log(posts);
+                                            createCardsHTML(posts);
+                                }
+
+                }
+    );
+};

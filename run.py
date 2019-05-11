@@ -17,37 +17,28 @@ app = Flask(__name__)
 @app.route("/home")
 @app.route("/")
 def home():
-    #my_list = range(101, 207)
-    webapp_config = backend.utils.textfile_to_var("config/webapp.config.json", "json")
-
+    some_array = range(101, 207)
+    
     return render_template(
                               "home.html"
                             , my_string="akash"
-                            , items=backend.apis.getItems()
-                            , background_color=("background-color: " + str(webapp_config['website_background'])) 
+                            , posts=backend.apis.getPosts()
+                            , some_array=some_array
     )
 
-@app.route("/api/getItems", methods=['POST'])
-def api_getItems():
-    backend.apis.getItems()
-
-#def getUser_fromDB():
-#    cur = db_conn.cursor()
-#    try:
-#        cur.execute("""SELECT * from bar""")
-#    except:
-#        print "I can't SELECT from bar"
-#
-#    rows = cur.fetchall()
-#    print "\nRows: \n"
-#    for row in rows:
-#        print "   ", row[1]
+@app.route("/api/getPosts", methods=['GET'])
+def api_getPosts():
+    return backend.apis.getPosts()
 
 
 if __name__ == "__main__":
     port = 8081
+    
     #app.debug = True # Turn False later
+    # For Development:
     app.run(host='0.0.0.0', port=port)
+    
+    # For Production: 
     #http_server = WSGIServer(('', port), app)
     #http_server.serve_forever()
 
