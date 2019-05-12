@@ -56,3 +56,22 @@ var getPosts_fromServer = function(user_search_string) {
                 }
     );
 };
+
+
+var loadpage_posts = function(post_id) {
+    console.log("Card Clicked");
+    $.ajax(
+                {
+                      url: "/posts"
+                    , type: 'GET'
+                    , async: false
+                    , data: {post_id: post_id}
+                    , success: function(response) {
+                                            //posts = JSON.parse(response);
+                                            console.log(response);
+                                            //createCardsHTML(posts);
+                                }
+
+                }
+    );
+};

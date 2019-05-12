@@ -26,6 +26,13 @@ def home():
                             , some_array=some_array
     )
 
+@app.route("/posts")
+def posts():
+    print ("Woohhhoooo")
+    return render_template(
+                              "post.html"
+    )
+
 @app.route("/api/getPosts", methods=['GET'])
 def api_getPosts():
     return backend.apis.getPosts()
